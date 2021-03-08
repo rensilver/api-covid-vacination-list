@@ -1,4 +1,4 @@
-package com.rensilver.crud.apicovidvacinationlist.entities;
+/*package com.rensilver.crud.apicovidvacinationlist.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -6,7 +6,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
-@Table(value = "tb_citizen")
+@Table(name = "tb_citizen")
 public class Citizen implements Serializable {
 
     @Id
@@ -47,3 +47,4 @@ public class Citizen implements Serializable {
         this.age = age;
     }
 }
+*/

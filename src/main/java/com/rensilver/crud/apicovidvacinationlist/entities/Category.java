@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(value = "tb_category")
+@Table(name = "tb_category")
 public class Category {
 
     @Id
@@ -15,10 +15,15 @@ public class Category {
     public Category() {
     }
 
-    public Category(Integer id, String name) {
-        this.id = id;
-        this.name = name;
+    public Category(Category entity) {
+        this.id = entity.getId();
+        this.name = entity.getName();
     }
+
+    public Category(Integer id) {
+        this.id = id;
+    }
+
 
     public Integer getId() {
         return id;

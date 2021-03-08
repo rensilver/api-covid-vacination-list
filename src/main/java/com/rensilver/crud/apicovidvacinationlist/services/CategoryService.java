@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategoryService {
@@ -17,5 +18,27 @@ public class CategoryService {
     @Transactional(readOnly = true)
     public List<Category> findAll() {
        return categoryRepository.findAll();
+    }
+
+    @Transactional(readOnly = true)
+    public Category findById(Integer id) {
+        Optional<Category> obj = categoryRepository.findById(id);
+        Category entity = obj.orElseThrow(() -> new RuntimeException("Category not found"));
+        return new Category(entity);
+    }
+
+    @Transactional
+    public Category insert(Category entity) {
+        Category category = new Category();
+        category.setName(entity.getName());
+        entity = categoryRepository.save(entity);
+        return new Category(entity);
+    }
+
+    @Transactional
+    public Category update(Integer id, Category entity) {
+        Category category = categoryRepository.getOne(id);
+        category.setName(entity.getName());
+        return new Category(category);
     }
 }

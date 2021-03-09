@@ -1,26 +1,36 @@
-/*package com.rensilver.crud.apicovidvacinationlist.entities;
+package com.rensilver.crud.apicovidvacinationlist.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_citizen")
 public class Citizen implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private Integer age;
+
+    @ManyToMany
+    @JoinTable(name = "tb_citizen_category",
+        joinColumns = @JoinColumn(name = "citizen_id"),
+        inverseJoinColumns = @JoinColumn(name = "category_id"))
+    Set<Category> categories = new HashSet<>();
 
     public Citizen() {
     }
 
-    public Citizen(Integer id, String name, Integer age) {
+    public Citizen(Citizen entity) {
+        this.id = entity.getId();
+        this.name = entity.getName();
+    }
+
+    public Citizen(Integer id, String name) {
         this.id = id;
         this.name = name;
-        this.age = age;
     }
 
     public Integer getId() {
@@ -38,13 +48,4 @@ public class Citizen implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
 }
-*/

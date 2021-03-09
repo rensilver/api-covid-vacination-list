@@ -41,4 +41,8 @@ public class CategoryService {
         category.setName(entity.getName());
         return new Category(category);
     }
+
+    public void delete(Integer id) {
+        categoryRepository.deleteById(id);
+    }
 }

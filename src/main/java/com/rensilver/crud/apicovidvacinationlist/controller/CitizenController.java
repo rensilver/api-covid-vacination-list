@@ -5,8 +5,6 @@ import com.rensilver.crud.apicovidvacinationlist.services.CitizenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping(value = "/citizens")
 public class CitizenController {
@@ -15,7 +13,7 @@ public class CitizenController {
     private CitizenService service;
 
     @GetMapping
-    public List<Citizen> findAllCategories() {
+    public Iterable<Citizen> findAllCitizens() {
         return service.findAll();
     }
 

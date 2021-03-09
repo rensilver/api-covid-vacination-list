@@ -3,13 +3,9 @@ package com.rensilver.crud.apicovidvacinationlist.controller;
 import com.rensilver.crud.apicovidvacinationlist.entities.Category;
 import com.rensilver.crud.apicovidvacinationlist.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
-
-import static java.lang.System.*;
 
 @RestController
 @RequestMapping(value = "/categories")

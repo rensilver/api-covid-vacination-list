@@ -26,11 +26,7 @@ public class Citizen implements Serializable {
     public Citizen(Citizen entity) {
         this.id = entity.getId();
         this.name = entity.getName();
-    }
-
-    public Citizen(Integer id, String name) {
-        this.id = id;
-        this.name = name;
+        this.categories = entity.getCategories();
     }
 
     public Integer getId() {

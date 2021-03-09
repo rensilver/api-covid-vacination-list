@@ -48,4 +48,8 @@ public class Citizen implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+
+    public Set<Category> getCategories() {
+        return categories;
+    }
 }

@@ -1,6 +1,8 @@
 ## API Covid Vacination List
 #### API REST Spring with JPA / Hibernate - Deployed to Azure Cloud App Services - Database: Azure MySQL Server - Consulta uma lista de cidadãos e suas categorias e retorna. CRUD com as operações: buscar, inserir, atualizar e deletar.
 
+#### Conhecimento adquirido na Aceleração Avanade Azure da Digital Innovation One com os Especialistas Michelli Brito e Rodrigo Tavares.
+
 #### App Service implantado na nuvem Azure
 
 ![alt text](https://github.com/rensilver/image-repo-github/blob/main/api-covid-vacination-list-azure.png)
